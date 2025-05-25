@@ -1,0 +1,58 @@
+<mat-tab-group>
+
+  <!-- Tab 1: Record a Meeting -->
+  <mat-tab label="Record a Meeting">
+    <div class="container">
+
+      <h2>Record a Meeting</h2>
+
+      <div class="controls">
+        <button mat-raised-button color="primary" (click)="start()" [disabled]="recording">
+          Start Recording
+        </button>
+        <button mat-raised-button color="warn" (click)="stop()" [disabled]="!recording">
+          Stop Recording
+        </button>
+      </div>
+
+      <div *ngIf="audioURL" class="audio-preview">
+        <h3>Preview Recording</h3>
+        <audio [src]="audioURL" controls></audio>
+      </div>
+
+      <mat-card *ngIf="summary">
+        <mat-card-header>
+          <mat-card-title>Meeting Summary</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ summary }}</p>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </mat-tab>
+
+  <!-- Tab 2: Example Transcript -->
+  <mat-tab label="Example Transcript">
+    <div class="container">
+
+      <h2>Sample Meeting Transcript</h2>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Team Sync – Marketing & Sales</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            "Hi team, just a quick update from the marketing side. We launched the new campaign last Thursday and have already seen a 12% increase in lead generation. The ad creatives are performing best on Instagram, especially the video format. Sales – any update on how the new leads are converting?"
+          </p>
+          <p>
+            "Thanks, Sarah. Yes, we've followed up with most leads. Early conversations are positive, especially in the fintech segment. We'll need more targeted messaging for e-commerce though. Let’s align next Tuesday to finalize the Q3 roadmap."
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </mat-tab>
+
+</mat-tab-group>
