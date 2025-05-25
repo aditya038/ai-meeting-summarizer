@@ -114,7 +114,11 @@ minutes-of-meeting-app/
 
    Navigate to `http://localhost:4200`
 
+5. **Also run**
+
+     ```bash
    python manage.py runserver
+   ```
 
 ---
 
