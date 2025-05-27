@@ -114,9 +114,10 @@ minutes-of-meeting-app/
 
    Navigate to `http://localhost:4200`
 
-5. **Also run**
+5. **Also on a new terminal, run**
 
      ```bash
+   cd meeting_backend 
    python manage.py runserver
    ```
 
