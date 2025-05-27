@@ -1,27 +1,27 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { RecordMeetingComponent } from './app.component';
 
-describe('AppComponent', () => {
+describe('RecordMeetingComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [RecordMeetingComponent],
     }).compileComponents();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(RecordMeetingComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it(`should have the 'meeting-summarizerr' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
+    const fixture = TestBed.createComponent(RecordMeetingComponent);
+    const app: RecordMeetingComponent = fixture.componentInstance;
     expect(app.title).toEqual('meeting-summarizerr');
   });
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(RecordMeetingComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, meeting-summarizerr');

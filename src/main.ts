@@ -5,14 +5,14 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from './environments/firebase';
 import { RecordMeetingComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
-import { HttpClientModule } from '@angular/common/http'; // ✅ ADD THIS
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 bootstrapApplication(RecordMeetingComponent, {
   ...appConfig,
   providers: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
-    importProvidersFrom(HttpClientModule), // ✅ ADD THIS LINE
+    provideHttpClient(withFetch()), // ✅ CORRECT WAY to enable fetch
     ...(appConfig.providers || [])
   ]
 }).catch(err => console.error(err));

@@ -1,0 +1,6 @@
+<div *ngIf="summaries.length > 0">
+  <h3>Past Meeting Summaries</h3>
+  <mat-card *ngFor="let summary of summaries" class="summary-card">
+    {{ summary }}
+  </mat-card>
+</div>

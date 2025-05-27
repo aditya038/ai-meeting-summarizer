@@ -55,4 +55,27 @@
     </div>
   </mat-tab>
 
+  <!-- Tab 3: Past Summaries -->
+<mat-tab label="Past Summaries">
+  <div class="container">
+    <h2>Past Meeting Summaries</h2>
+
+    <ng-container *ngIf="pastSummaries.length > 0; else noSummaries">
+      <mat-card *ngFor="let meeting of pastSummaries" style="margin-bottom: 10px;">
+        <mat-card-header>
+          <mat-card-title>{{ meeting.title }}</mat-card-title>
+          <mat-card-subtitle>{{ meeting.createdAt?.toDate() | date:'medium' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ meeting.summary }}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+
+    <ng-template #noSummaries>
+      <p>No past summaries found.</p>
+    </ng-template>
+  </div>
+</mat-tab>
+
 </mat-tab-group>
